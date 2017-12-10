@@ -1,6 +1,9 @@
 "general
 set number
 set relativenumber
+set noundofile
+set backupdir=~/.vim/tmp,.
+set directory=~/.vim/tmp,.
 
 "leader
 let mapleader = ","
