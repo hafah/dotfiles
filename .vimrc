@@ -2,8 +2,12 @@
 set number
 set relativenumber
 
+"leader
+let mapleader = ","
+
 "keybindings
 imap jk <ESC>
+nmap <leader>w :w!<cr>
 
 "vimplug installer
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -16,7 +20,11 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
+Plug 'wikitopian/hardmode'
 call plug#end()
 
 "emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+"hardmode
+nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
