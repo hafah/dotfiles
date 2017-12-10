@@ -28,10 +28,24 @@ Plug 'wikitopian/hardmode'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-journal'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 "emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+"goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 "hardmode
 nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
+
+"limelight
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
