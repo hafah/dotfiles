@@ -10,6 +10,7 @@ let mapleader = ","
 
 "keybindings
 imap jk <ESC>
+vmap jk <ESC>
 nmap <leader>w :w!<cr>
 
 "vimplug installer
@@ -24,6 +25,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 call plug#end()
 
 "emmet
