@@ -9,7 +9,7 @@ set directory=~/.vim/tmp,.
 let mapleader = ","
 
 "colours
-au BufRead,BufNewFile *.twig *.volt set filetype=htmljinja
+au BufRead,BufNewFile *.volt set filetype=htmljinja
 
 "keybindings
 imap jk <ESC>
@@ -36,7 +36,14 @@ Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
+
+"ctrlp
+if exists("g:ctrl_user_command")
+  unlet g:ctrlp_user_command
+endif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 
 "emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
