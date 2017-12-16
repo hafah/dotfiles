@@ -36,6 +36,7 @@ Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
@@ -54,6 +55,10 @@ autocmd! User GoyoLeave Limelight!
 
 "hardmode
 nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
+
+"jshint
+let jshint2_read = 1
+let jshint2_save = 1
 
 "limelight
 nmap <Leader>l <Plug>(Limelight)
