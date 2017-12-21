@@ -12,6 +12,7 @@ let mapleader = ","
 imap jk <ESC>
 vmap jk <ESC>
 nmap <leader>w :w!<cr>
+autocmd FileType python map <leader>t :call Flake8()<CR>
 
 "vimplug installer
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -30,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 "emmet
@@ -49,3 +51,15 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = "--standard=PSR2"
