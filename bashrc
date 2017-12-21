@@ -15,3 +15,6 @@ alias down="cd -"
 
 # config
 alias refresh="refresh"
+
+# terminal
+PS1='\$ '
