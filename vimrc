@@ -1,5 +1,10 @@
 "general
 set number
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
 set relativenumber
 set noundofile
 set backupdir=~/.vim/tmp,.
@@ -10,6 +15,7 @@ let mapleader = ","
 
 "colours
 au BufRead,BufNewFile *.volt set filetype=htmljinja
+au BufRead,BufNewFile *.tpl set filetype=html
 
 "keybindings
 imap jk <ESC>
