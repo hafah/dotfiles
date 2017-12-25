@@ -1,0 +1,7 @@
+[core]
+    editor = "vim"
+[push]
+	default = simple
+[user]
+	email = b.hafah@hafah.nl
+	name = Brahim Hafah
