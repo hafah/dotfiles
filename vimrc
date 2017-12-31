@@ -23,6 +23,12 @@ vmap jk <ESC>
 nmap <leader>w :w!<cr>
 autocmd FileType python map <leader>t :call Flake8()<CR>
 
+"easy copy pasta
+set clipboard=unnamedplus
+nmap <leader>= ggVG=
+nmap <leader>a ggVG
+nmap <leader>p +p
+
 "vimplug installer
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -46,6 +52,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "ctrlp
