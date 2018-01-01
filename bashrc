@@ -1,7 +1,9 @@
 # functions
-cdls() { 
-  cd "$@" && ls;
-}
+# currently my babun crashes I need to reinstall it
+# but till that time I'm commenting this.
+#cdls() { 
+#  cd "$@" && ls;
+#}
 
 refresh() {
   source ~/.bashrc
