@@ -11,7 +11,7 @@ refresh() {
 }
 
 # movement
-alias cd="cdls"
+#alias cd="cdls"
 alias up="cd .."
 alias down="cd -"
 

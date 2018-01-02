@@ -2,17 +2,26 @@
 
 echo "copying..."
 
-cp vimrc ~/.vimrc
-echo "- vimrc"
-
+cp vimrc ~/.vimrc &>/dev/null
 cp tmux.conf ~/.tmux.conf
-echo "- tmux.conf"
-
 cp bashrc ~/.bashrc
+
+echo "refreshing..."
+echo "- vimrc"
+source ~/.vimrc &>/dev/null
+
+echo "- tmux.conf"
+if ! [ -z "$TMUX" ]; then 
+    tmux source-file ~/.tmux.conf
+fi
+
 echo "- bashrc"
+source ~/.bashrc
 
-cp gitconfig ~/.gitconfig
 echo "- gitconfig"
+cp gitconfig ~/.gitconfig
+source ~/.gitconfig &>/dev/null
 
-cp inputrc ~/.inputrc
 echo "- inputrc"
+cp inputrc ~/.inputrc
+source ~/.inputrc
