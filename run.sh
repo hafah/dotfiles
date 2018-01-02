@@ -20,7 +20,6 @@ source ~/.bashrc
 
 echo "- gitconfig"
 cp gitconfig ~/.gitconfig
-source ~/.gitconfig &>/dev/null
 
 echo "- inputrc"
 cp inputrc ~/.inputrc
