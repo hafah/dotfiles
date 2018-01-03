@@ -62,6 +62,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 "ctrlp
