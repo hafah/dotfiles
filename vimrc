@@ -9,6 +9,8 @@ set relativenumber
 set noundofile
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+set splitbelow
+set splitright
 
 "leader
 let mapleader = ","
@@ -21,7 +23,12 @@ au BufRead,BufNewFile *.tpl set filetype=html
 imap jk <ESC>
 vmap jk <ESC>
 nmap <leader>w :w!<cr>
+nmap <leader>n i<cr><ESC>
 autocmd FileType python map <leader>t :call Flake8()<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "easy copy pasta
 set clipboard=unnamedplus
@@ -54,11 +61,16 @@ Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ddrscott/vim-side-search'
 call plug#end()
 
 "ctrlp
 if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
+endif
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 
@@ -83,6 +95,9 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = 'DarkGray'	
 let g:limelight_conceal_guifg = '#777777'
+
+"sidesearch
+nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "syntastic
 set statusline+=%#warningmsg#
