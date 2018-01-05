@@ -63,6 +63,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
 Plug 'tpope/vim-unimpaired'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 "ctrlp
