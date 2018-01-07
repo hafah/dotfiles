@@ -29,4 +29,4 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
 # terminal
-PS1='\[\e[0;34;40m\]{ \[\e[0;34;40m\]\w \[\e[0;34;40m\]} \[\e[1;32m\]$(git-folder) \[\e[33;40m\] » ' 
+PS1='\[\e[1;37;40m\]{ \[\e[1;37;40m\]\w \[\e[1;37;40m\]} \[\e[1;32m\]$(git-folder) \[\e[33;40m\] » ' 
