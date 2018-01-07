@@ -74,7 +74,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
 call plug#end()
 
 "ctrlp
