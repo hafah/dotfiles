@@ -24,3 +24,8 @@ cp gitconfig ~/.gitconfig
 echo "- inputrc"
 cp inputrc ~/.inputrc
 source ~/.inputrc
+
+echo "- termux"
+mkdir ~/.termux
+cp termux ~/.termux/termux.properties
+termux-reload-settings
