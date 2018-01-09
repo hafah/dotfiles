@@ -22,9 +22,9 @@ function git-folder {
 	[ -d .git ] && git name-rev --name-only @
 }
 
-export DOCKER_HOST='tcp://0.0.0.0:2375'
 
 # docker
+export DOCKER_HOST=tcp://0.0.0.0:2375
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
