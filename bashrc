@@ -1,9 +1,19 @@
 # functions
-# currently my babun crashes I need to reinstall it
-# but till that time I'm commenting this.
-#cdls() { 
-#  cd "$@" && ls;
-#}
+function git-folder {
+	[ -d .git ] && git name-rev --name-only @
+}
+
+cdls() { 
+  cd "$@" && ls;
+}
+
+bitbucket() {
+    git clone https://bitbucket.org/hafah/$1
+}
+
+github() {
+    git clone https://github.com/hafah/$1
+}
 
 refresh() {
   source ~/.bashrc
@@ -11,20 +21,20 @@ refresh() {
 }
 
 # movement
-#alias cd="cdls"
 alias up="cd .."
 alias down="cd -"
+
+alias hafah="cd ~/repos/hafah/ && cd"
+# how to use the hafah alias
+# $ { ~ } hafah
+# $ { ~/repos/hafah } hafah .
+# $ { ~/repos/hafah/dotfiles } hafah dotfiles
 
 # config
 alias refresh="refresh"
 
-function git-folder {
-	[ -d .git ] && git name-rev --name-only @
-}
-
-export DOCKER_HOST='tcp://0.0.0.0:2375'
-
 # docker
+export DOCKER_HOST='tcp://0.0.0.0:2375'
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
