@@ -16,8 +16,15 @@ set splitright
 let mapleader = ","
 
 "colours
+set t_Co=256
+set background=dark
+colorscheme gruvbox
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
+
+"fonts
+set encoding=utf8
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
 imap jk <ESC>
@@ -64,6 +71,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
 Plug 'tpope/vim-unimpaired'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'morhetz/gruvbox'
+Plug 'godlygeek/csapprox'
+Plug 'ryanoasis/vim-devicons'
+Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
 call plug#end()
 
 "ctrlp
