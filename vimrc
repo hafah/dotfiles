@@ -22,6 +22,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sirVer/ultisnips'
 Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
 call plug#end()
 
@@ -111,6 +112,13 @@ let g:limelight_conceal_guifg = '#777777'
 
 "sidesearch
 nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
+
+"snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let UltiSnipsSnippetsDir = "~/vim-snippets/"
+let UltiSnipsSnippetsDirectories = ["vim-snippets"]
 
 "syntastic
 set statusline+=%#warningmsg#

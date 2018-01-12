@@ -1,12 +1,16 @@
 #!/bin/bash
 
-echo "copying..."
+echo "COPY"
 
+echo "- folders"
+cp -r vim-snippets ~/vim-snippets
+echo "- dotfiles"
 cp vimrc ~/.vimrc &>/dev/null
 cp tmux.conf ~/.tmux.conf
 cp bashrc ~/.bashrc
 
-echo "refreshing..."
+echo ""
+echo "REFRESH"
 echo "- vimrc"
 source ~/.vimrc &>/dev/null
 
@@ -26,6 +30,7 @@ cp inputrc ~/.inputrc
 source ~/.inputrc
 
 echo "- termux"
-mkdir ~/.termux
+mkdir -p ~/.termux
 cp termux ~/.termux/termux.properties
-termux-reload-settings
+termux-reload-settings &>/dev/null
+
