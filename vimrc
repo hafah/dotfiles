@@ -23,7 +23,6 @@ Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirVer/ultisnips'
-Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
 call plug#end()
 
 "general
