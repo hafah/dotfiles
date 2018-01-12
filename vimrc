@@ -1,3 +1,10 @@
+"vimplug installer
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 "vimplug packages
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
@@ -26,6 +33,8 @@ Plug 'sirVer/ultisnips'
 call plug#end()
 
 "general
+filetype plugin indent on
+syntax on
 set number
 set expandtab
 set tabstop=4
@@ -63,19 +72,24 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
 
 "easy copy pasta
 set clipboard=unnamedplus
 nmap <leader>= ggVG=
 nmap <leader>a ggVG
 nmap <leader>p +p
-
-"vimplug installer
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 "ctrlp
 if exists("g:ctrl_user_command")
