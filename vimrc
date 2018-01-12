@@ -1,3 +1,30 @@
+"vimplug packages
+call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'wikitopian/hardmode'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-journal'
+Plug 'junegunn/limelight.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'mitsuhiko/vim-jinja'
+Plug 'Shutnik/jshint2.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'ddrscott/vim-side-search'
+Plug 'tpope/vim-unimpaired'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'morhetz/gruvbox'
+Plug 'godlygeek/csapprox'
+Plug 'ryanoasis/vim-devicons'
+Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
+call plug#end()
+
 "general
 set number
 set expandtab
@@ -49,33 +76,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
-"vimplug packages
-call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'wikitopian/hardmode'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
-Plug 'junegunn/vim-journal'
-Plug 'junegunn/limelight.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'airblade/vim-gitgutter'
-Plug 'mitsuhiko/vim-jinja'
-Plug 'Shutnik/jshint2.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ddrscott/vim-side-search'
-Plug 'tpope/vim-unimpaired'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'morhetz/gruvbox'
-Plug 'godlygeek/csapprox'
-Plug 'ryanoasis/vim-devicons'
-Plug 'valloric/YouCompleteMe', { 'do': 'install.py --clang-completer' }
-call plug#end()
 
 "ctrlp
 if exists("g:ctrl_user_command")
