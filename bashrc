@@ -8,11 +8,11 @@ cdls() {
 }
 
 bitbucket() {
-    git clone https://bitbucket.org/hafah/$1
+    https://bitbucket.org/hafah/$1
 }
 
 github() {
-    git clone https://github.com/hafah/$1
+    https://github.com/hafah/$1
 }
 
 refresh() {
@@ -23,15 +23,11 @@ refresh() {
 # movement
 alias up="cd .."
 alias down="cd -"
-
 alias hafah="cd ~/repos/hafah/ && cd"
-# how to use the hafah alias
-# $ { ~ } hafah
-# $ { ~/repos/hafah } hafah .
-# $ { ~/repos/hafah/dotfiles } hafah dotfiles
 
 # config
 alias refresh="refresh"
+alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml up"
 
 function git-folder {
 	[ -d .git ] && git name-rev --name-only @
