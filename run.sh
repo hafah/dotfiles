@@ -1,9 +1,8 @@
 #!/bin/bash
-
 echo "COPY"
 
 echo "- folders"
-cp -r vim-snippets ~/vim-snippets
+cp -r vim-snippets ~/.vim/vim-snippets
 echo "- dotfiles"
 cp vimrc ~/.vimrc &>/dev/null
 cp tmux.conf ~/.tmux.conf
