@@ -51,6 +51,8 @@ set splitright
 
 "leader
 let mapleader = ","
+nmap <leader>w :w!<cr>
+nmap <leader>r :!clear && python %<CR>
 
 "colours
 set t_Co=256
@@ -66,7 +68,6 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 "keybindings
 imap jk <ESC>
 vmap jk <ESC>
-nmap <leader>w :w!<cr>
 nmap <leader>n i<cr><ESC>
 autocmd FileType python map <leader>t :call Flake8()<CR>
 nnoremap <C-J> <C-W><C-J>
