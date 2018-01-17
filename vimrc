@@ -7,11 +7,13 @@ endif
 
 "vimplug packages
 call plug#begin('~/.vim/plugged')
+Plug 'sirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
@@ -29,7 +31,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sirVer/ultisnips'
 call plug#end()
 
 "general
@@ -51,8 +52,11 @@ set splitright
 
 "leader
 let mapleader = ","
+nmap <leader>n i<cr><ESC>
 nmap <leader>w :w!<cr>
 nmap <leader>r :!clear && python %<CR>
+nmap <leader>nn :NERDTreeToggle<CR>
+
 
 "colours
 set t_Co=256
@@ -68,8 +72,8 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 "keybindings
 imap jk <ESC>
 vmap jk <ESC>
-nmap <leader>n i<cr><ESC>
 autocmd FileType python map <leader>t :call Flake8()<CR>
+nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
