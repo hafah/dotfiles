@@ -37,6 +37,7 @@ call plug#end()
 "general
 filetype plugin indent on
 syntax on
+set t_ti= t_te=p
 set cursorline
 set number
 set expandtab
