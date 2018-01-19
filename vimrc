@@ -27,6 +27,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
@@ -52,11 +53,11 @@ set splitright
 
 "leader
 let mapleader = ","
-nmap <leader>n i<cr><ESC>
-nmap <leader>w :w!<cr>
+nmap <leader>n i<CR><ESC>
+nmap <leader>w :w!<CR>
 nmap <leader>r :!clear && python %<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
-
+vmap <leader>/ :Commentary<CR>
 
 "colours
 set t_Co=256
@@ -78,6 +79,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"disable arrow keys
 no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
