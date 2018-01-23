@@ -117,6 +117,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 "emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+"fzf
+command! -bang FLines call fzf#vim#grep(
+     \ 'grep -vnITr --color=always --exclude-dir=".git" --exclude-dir="www/vendor" "^$"', 
+     \ 0,  
+     \ {'options': '--reverse --prompt "FLines> "'})
+
+nnoremap <silent> <leader>e :FLines<cr>
+
 "goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
