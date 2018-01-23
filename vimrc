@@ -56,7 +56,10 @@ set splitright
 let mapleader = ","
 nmap <leader>n i<CR><ESC>
 nmap <leader>w :w!<CR>
-nmap <leader>r :!clear && python %<CR>
+nmap <leader>rp :!clear && python %<CR>
+nmap <leader>rb :!clear && bash %<CR>
+nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
+nmap <leader>rf :!./a.out<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
 vmap <leader>/ :Commentary<CR>
 
