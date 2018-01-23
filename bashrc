@@ -33,6 +33,8 @@ function git-folder {
 	[ -d .git ] && git name-rev --name-only @
 }
 
+#vagrant
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 
 # docker
 export DOCKER_HOST=tcp://0.0.0.0:2375
