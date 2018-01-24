@@ -30,7 +30,7 @@ alias refresh="refresh"
 alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml up"
 
 #tmuxodoro
-env TOMATOES=8 TOMATO_TIME=25 REST_TIME=5 tmuxodoro
+env TOMATOES=8 TOMATO_TIME=25 REST_TIME=5 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
