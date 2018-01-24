@@ -30,6 +30,7 @@ alias refresh="refresh"
 alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml up"
 
 #tmuxodoro
+killall tmuxodoro >/dev/null 2>&1
 env TOMATOES=8 TOMATO_TIME=25 REST_TIME=5 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #vagrant
