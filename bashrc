@@ -29,9 +29,8 @@ alias hafah="cd ~/repos/hafah/ && cd"
 alias refresh="refresh"
 alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml up"
 
-function git-folder {
-	[ -d .git ] && git name-rev --name-only @
-}
+#tmuxodoro
+env TOMATOES=8 TOMATO_TIME=25 REST_TIME=5 tmuxodoro
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
