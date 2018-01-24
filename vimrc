@@ -32,6 +32,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 "general
