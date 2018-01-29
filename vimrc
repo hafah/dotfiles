@@ -14,11 +14,13 @@ Plug 'wikitopian/hardmode'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
@@ -149,6 +151,8 @@ let g:limelight_conceal_guifg = '#777777'
 nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
+"since ultisnips doesn't want to work. I'll do it myself
+au FileType php imap func<tab> jkdbipublic function () {}jkhi<CR>jkk$hhi
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
