@@ -35,6 +35,9 @@ Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/seoul256.vim'
+
 call plug#end()
 
 "general
@@ -48,12 +51,14 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-set relativenumber
 set noundofile
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set splitbelow
 set splitright
+set noshowmode
+set noshowcmd
+set laststatus=2
 
 "leader
 let mapleader = ","
@@ -65,11 +70,14 @@ nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
 nmap <leader>rf :!./a.out<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
 vmap <leader>/ :Commentary<CR>
+nmap <leader>pi :PlugInstall<CR>
+nmap <leader>pu :PlugUpdate<CR>
+nmap <leader>pc :PlugClean<CR>
 
 "colours
 set t_Co=256
-set background=dark
-colorscheme gruvbox
+set background=light
+colorscheme seoul256-light
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
 
@@ -139,6 +147,11 @@ nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
 let jshint2_read = 1
 let jshint2_save = 1
 
+"lightline
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
+
 "limelight
 nmap <Leader>l <Plug>(Limelight)
 xmap <Leader>l <Plug>(Limelight)
@@ -171,3 +184,6 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args = "--standard=PSR2"
 let g:syntastic_python_pylint_args = "--errors-only"
+
+"tmux
+autocmd VimEnter,VimLeave * silent !tmux set status
