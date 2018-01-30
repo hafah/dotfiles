@@ -76,8 +76,8 @@ nmap <leader>pc :PlugClean<CR>
 
 "colours
 set t_Co=256
-set background=light
-colorscheme seoul256-light
+set background=dark
+colorscheme seoul256
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
 
