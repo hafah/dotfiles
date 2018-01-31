@@ -31,7 +31,7 @@ alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml u
 
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=8 TOMATO_TIME=25 REST_TIME=5 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=2 TOMATO_TIME=35 REST_TIME=8 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
