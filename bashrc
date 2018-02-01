@@ -38,7 +38,7 @@ export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 
 # docker
 export DOCKER_HOST=tcp://0.0.0.0:2375
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
 # terminal
