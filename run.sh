@@ -21,6 +21,9 @@ fi
 echo "- bashrc"
 source ~/.bashrc
 
+echo "- composer"
+cp composer ~/.composer/composer.json
+
 echo "- gitconfig"
 cp gitconfig ~/.gitconfig
 
