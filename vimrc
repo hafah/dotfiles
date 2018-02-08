@@ -188,6 +188,3 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args = "--standard=PSR2"
 let g:syntastic_python_pylint_args = "--errors-only"
-
-"tmux
-autocmd VimEnter,VimLeave * silent !tmux set status
