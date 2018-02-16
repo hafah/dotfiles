@@ -112,7 +112,7 @@ vno <right> <Nop>
 vno <up> <Nop>
 
 "easy copy pasta
-set clipboard=exclude:.*
+set clipboard=unnamedplus
 nmap <leader>= ggVG=
 nmap <leader>a ggVG
 nmap <leader>p +p
