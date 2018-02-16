@@ -20,6 +20,9 @@ refresh() {
   tmux source-file ~/.tmux.conf
 }
 
+#git
+alias commit="git add -A; git commit -v && git push"
+
 # movement
 alias up="cd .."
 alias down="cd -"
