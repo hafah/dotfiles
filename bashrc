@@ -37,7 +37,7 @@ export DISPLAY=localhost:0.0
 
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=2 TOMATO_TIME=35 REST_TIME=8 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=3 TOMATO_TIME=35 REST_TIME=12 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
