@@ -91,7 +91,6 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 imap jk <ESC>
 vmap jk <ESC>
 autocmd FileType python map <leader>t :call Flake8()<CR>
-nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
