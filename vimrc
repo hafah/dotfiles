@@ -7,7 +7,6 @@ endif
 
 "vimplug packages
 call plug#begin('~/.vim/plugged')
-Plug 'sirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
@@ -167,13 +166,7 @@ let g:limelight_conceal_guifg = '#777777'
 nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
-"since ultisnips doesn't want to work. I'll do it myself
 au FileType php imap func<tab> jkdbipublic function () {}jkhi<CR>jkk$hhi
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let UltiSnipsSnippetsDir = "~/vim-snippets/"
-let UltiSnipsSnippetsDirectories = ["vim-snippets"]
 
 "syntastic
 set statusline+=%#warningmsg#
