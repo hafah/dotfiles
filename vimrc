@@ -22,6 +22,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'joonty/vdebug'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
