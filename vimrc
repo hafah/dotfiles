@@ -109,6 +109,10 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
+"autocomplete
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
 "easy copy pasta
 set clipboard=unnamedplus
 nmap <leader>= ggVG=
@@ -132,7 +136,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "fzf
 command! -bang FLines call fzf#vim#grep(
-     \ 'grep -vnITr --color=always --exclude-dir=".git" --exclude-dir="www/vendor" "^$"', 
+     \ 'grep -vnITr --color=always --exclude-dir=".git" --exclude-dir="vendor" --exclude-dir="node_modules" "^$"', 
      \ 0,  
      \ {'options': '--reverse --prompt "FLines> "'})
 
