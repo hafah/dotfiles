@@ -171,7 +171,7 @@ let g:limelight_conceal_guifg = '#777777'
 nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
-au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkk$hhi
+au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk$hhi
 
 "syntastic
 set statusline+=%#warningmsg#
