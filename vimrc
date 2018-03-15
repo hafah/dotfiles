@@ -11,12 +11,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
@@ -64,9 +62,10 @@ set laststatus=2
 
 "leader
 let mapleader = ","
-nmap <leader>n i<CR><ESC>
+vmap <leader>k <ESC>
 nmap <leader>w :w!<CR>
 nmap <leader>rp :!clear && python %<CR>
+nmap <leader>rl :!clear && php %<CR>
 nmap <leader>rb :!clear && bash %<CR>
 nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
 nmap <leader>rf :!./a.out<CR>
@@ -89,7 +88,6 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
 imap jk <ESC>
-vmap jk <ESC>
 autocmd FileType python map <leader>t :call Flake8()<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -172,16 +170,3 @@ nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
 au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk$hhi
-
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args = "--standard=PSR2"
-let g:syntastic_python_pylint_args = "--errors-only"
