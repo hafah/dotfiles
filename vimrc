@@ -170,3 +170,15 @@ nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
 au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk$hhi
+
+"vdebug
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9999
+let g:vdebug_options["server"] = "192.168.56.1"
+let g:vdebug_options["break_on_open"] = 1
+let g:vdebug_options["ide_key"] = "vim"
+let g:vdebug_options['debug_file_level'] = 3
+let g:vdebug_options["debug_file"] = "~/repos/hafah/vdebug/vdebug.log"
+let g:vdebug_options['path_maps'] = {
+      \  '/var/web' : '/mnt/c/Users/Brahim/repos/hafah/web',
+      \}
