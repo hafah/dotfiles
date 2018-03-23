@@ -88,7 +88,8 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
 imap jk <ESC>
-nmap <silent> <leader>t :silent !powershell.exe -command "Add-Type -AssemblyName System.Windows.Forms; [Windows.Forms.Cursor]::Position = \"-1290,50\"; Add-Type -MemberDefinition '[DllImport(\"user32.dll\")] public static extern void mouse_event(int flags, int dx, int dy, int cButtons, int info);' -Name U32 -Namespace W; [W.U32]::mouse_event(6,0,0,0,0); [Windows.Forms.Cursor]::Position = \"40,40\"; [W.U32]::mouse_event(6,0,0,0,0);"<CR><CR>
+nmap <silent> <leader>t :silent !powershell.exe -command "Add-Type -AssemblyName System.Windows.Forms; [Windows.Forms.Cursor]::Position = \"-1290,50\"; Add-Type -MemberDefinition '[DllImport(\"user32.dll\")] public static extern void mouse_event(int flags, int dx, int dy, int cButtons, int info);' -Name U32 -Namespace W; [W.U32]::mouse_event(6,0,0,0,0); [Windows.Forms.Cursor]::Position = \"50,90\"; [W.U32]::mouse_event(6,0,0,0,0);"<CR><CR>
+nmap <silent> <leader>ts :silent !powershell.exe -command "Add-Type -AssemblyName System.Windows.Forms; [Windows.Forms.Cursor]::Position = \"80,55\"; Add-Type -MemberDefinition '[DllImport(\"user32.dll\")] public static extern void mouse_event(int flags, int dx, int dy, int cButtons, int info);' -Name U32 -Namespace W; [W.U32]::mouse_event(6,0,0,0,0); [Windows.Forms.Cursor]::Position = \"880,90\"; [W.U32]::mouse_event(6,0,0,0,0);"<CR><CR>
 
 autocmd FileType python map <leader>t :call Flake8()<CR>
 nnoremap <leader>wj <C-W><C-J>
@@ -177,7 +178,7 @@ au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk
 let g:vdebug_options = {}
 let g:vdebug_options["port"] = 9999
 let g:vdebug_options["server"] = "192.168.56.1"
-let g:vdebug_options["break_on_open"] = 1
+"let g:vdebug_options["break_on_open"] = 1
 let g:vdebug_options["ide_key"] = "vim"
 let g:vdebug_options['debug_file_level'] = 3
 let g:vdebug_options["debug_file"] = "~/repos/hafah/vdebug/vdebug.log"
