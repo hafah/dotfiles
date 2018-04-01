@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
+Plug 'w0rp/ale'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/gv.vim'
@@ -20,7 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'joonty/vdebug'
+Plug 'joonty/vdebug', { 'tag': 'v1.5.2' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddrscott/vim-side-search'
@@ -52,6 +53,7 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set noundofile
+set noswapfile
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set splitbelow
@@ -121,6 +123,10 @@ nmap <leader>= ggVG=
 nmap <leader>a ggVG
 nmap <leader>p +p
 
+"ale
+let g:ale_enabled = 1
+let g:ale_linters = {'php': ['php -l', 'phpcs']}
+
 "ctrlp
 if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
@@ -173,13 +179,14 @@ nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 
 "snippets
 au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk$hhi
+au FileType php vmap <leader>d yOvar_dump(jkpa);jkoexit();jk
 
 "vdebug
 let g:vdebug_options = {}
 let g:vdebug_options["port"] = 9999
 let g:vdebug_options["server"] = "192.168.56.1"
 "let g:vdebug_options["break_on_open"] = 1
-let g:vdebug_options["ide_key"] = "vim"
+let g:vdebug_options["ide_key"] = "PHPSTORM"
 let g:vdebug_options['debug_file_level'] = 3
 let g:vdebug_options["debug_file"] = "~/repos/hafah/vdebug/vdebug.log"
 let g:vdebug_options['path_maps'] = {
