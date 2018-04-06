@@ -64,7 +64,6 @@ set laststatus=2
 
 "leader
 let mapleader = ","
-vmap <leader>k <ESC>
 nmap <leader>w :w!<CR>
 nmap <leader>rp :!clear && python %<CR>
 nmap <leader>rl :!clear && php %<CR>
@@ -145,7 +144,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "fzf
 command! -bang FLines call fzf#vim#grep(
-     \ 'grep -vnITr --color=always --exclude-dir=".git" --exclude-dir="vendor" --exclude-dir="node_modules" "^$"', 
+     \ 'grep -vnITr --color=always --exclude-dir="cphalcon" --exclude-dir=".git" --exclude-dir="vendor" --exclude-dir="node_modules" "^$"', 
      \ 0,  
      \ {'options': '--reverse --prompt "FLines> "'})
 
