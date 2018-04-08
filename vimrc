@@ -44,9 +44,11 @@ call plug#end()
 "general
 filetype plugin indent on
 syntax on
+set nocompatible
 set t_ti= t_te=p
 set cursorline
 set number
+set hidden
 set expandtab
 set tabstop=4
 set shiftwidth=4
