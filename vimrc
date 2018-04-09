@@ -46,6 +46,7 @@ filetype plugin indent on
 syntax on
 set nocompatible
 set t_ti= t_te=p
+set timeoutlen=1000 ttimeoutlen=0
 set cursorline
 set number
 set hidden
