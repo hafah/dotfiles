@@ -1,7 +1,18 @@
+[alias]
+    st = status
+    ci = commit --verbose
+    di = diff
+    aa = add --all
+
 [core]
     editor = vim
+
+[merge]
+    tool = vimdiff
+
 [push]
 	default = simple
+
 [user]
 	email = b.hafah@hafah.nl
 	name = Brahim Hafah
