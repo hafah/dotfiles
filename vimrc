@@ -68,9 +68,9 @@ set laststatus=2
 "leader
 let mapleader = ","
 nmap <leader>w :w!<CR>
-nmap <leader>rp :!clear && python %<CR>
-nmap <leader>rl :!clear && php %<CR>
-nmap <leader>rb :!clear && bash %<CR>
+nmap <leader>rp :!python %<CR>
+nmap <leader>rl :!php %<CR>
+nmap <leader>rb :!bash %<CR>
 nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
 nmap <leader>rf :!./a.out<CR>
 nmap <leader>nn :NERDTreeToggle<CR>
