@@ -92,6 +92,7 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
 nmap ,q :q<CR>
+nmap ,g :!git difftool -y<CR>
 command Wq wq
 nmap <silent> <leader>t :silent !powershell.exe -command "Add-Type -AssemblyName System.Windows.Forms; [Windows.Forms.Cursor]::Position = \"-1290,50\"; Add-Type -MemberDefinition '[DllImport(\"user32.dll\")] public static extern void mouse_event(int flags, int dx, int dy, int cButtons, int info);' -Name U32 -Namespace W; [W.U32]::mouse_event(6,0,0,0,0); [Windows.Forms.Cursor]::Position = \"50,90\"; [W.U32]::mouse_event(6,0,0,0,0);"<CR><CR>
 nmap <silent> <leader>ts :silent !powershell.exe -command "Add-Type -AssemblyName System.Windows.Forms; [Windows.Forms.Cursor]::Position = \"80,55\"; Add-Type -MemberDefinition '[DllImport(\"user32.dll\")] public static extern void mouse_event(int flags, int dx, int dy, int cButtons, int info);' -Name U32 -Namespace W; [W.U32]::mouse_event(6,0,0,0,0); [Windows.Forms.Cursor]::Position = \"880,90\"; [W.U32]::mouse_event(6,0,0,0,0);"<CR><CR>
