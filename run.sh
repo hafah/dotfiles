@@ -36,3 +36,5 @@ mkdir -p ~/.termux
 cp termux ~/.termux/termux.properties
 termux-reload-settings &>/dev/null
 
+echo ""
+echo "CLOSING..."
