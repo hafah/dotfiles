@@ -36,5 +36,10 @@ mkdir -p ~/.termux
 cp termux ~/.termux/termux.properties
 termux-reload-settings &>/dev/null
 
+echo "- tmuxinator"
+mkdir -p ~/.config
+mkdir -p ~/.config/tmuxinator
+cp hafah.yml ~/.config/tmuxinator/hafah.yml
+
 echo ""
 echo "CLOSING..."

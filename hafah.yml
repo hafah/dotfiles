@@ -1,0 +1,11 @@
+# ~/.tmuxinator/hafah.yml
+
+name: hafah
+root: ~/
+
+windows:
+  - vim: hafah web && clear
+  - vagrant: hafah web && clear && vagrant up
+  - dotfiles: hafah dotfiles && clear
+  - control: hafah control && clear
+  - notes: hafah notes && clear
