@@ -40,7 +40,8 @@ killall tmuxodoro >/dev/null 2>&1
 env TOMATOES=3 TOMATO_TIME=35 REST_TIME=12 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
-export EDITOR='vim'
+export EDITOR="vim"
+alias mux="tmuxinator"
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"

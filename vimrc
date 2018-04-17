@@ -38,6 +38,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'maratynsky/vim-dark' 
 
 call plug#end()
 
@@ -82,7 +83,7 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
-colorscheme seoul256
+colorscheme dark
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
 
