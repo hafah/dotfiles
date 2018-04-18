@@ -4,8 +4,15 @@ name: hafah
 root: ~/
 
 windows:
-  - vim: hafah web && clear
-  - vagrant: hafah web && clear && vagrant up
-  - dotfiles: hafah dotfiles && clear
-  - control: hafah control && clear
-  - notes: hafah notes && clear
+  - vim: hafah <%= @args[0] %> && clear
+  - config: 
+      layout: main-vertical
+      panes:
+          - dotfiles: 
+            - hafah dotfiles && clear
+          - vagrant:
+            - hafah <%= @args[0] %> && clear && vagrant up
+          - notes:
+            - hafah notes && clear
+          - control:
+            - hafah control && clear
