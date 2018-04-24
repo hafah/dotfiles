@@ -32,14 +32,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'maratynsky/vim-dark' 
-
+Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
 "general
@@ -48,7 +46,6 @@ syntax on
 set nocompatible
 set t_ti= t_te=p
 set timeoutlen=1000 ttimeoutlen=0
-set cursorline
 set number
 set hidden
 set expandtab
@@ -83,7 +80,7 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
-colorscheme dark
+colorscheme gotham256
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
 
@@ -156,6 +153,7 @@ command! -bang FLines call fzf#vim#grep(
 nnoremap <silent> <leader>e :FLines<cr>
 
 "goyo
+let g:goyo_width = '120'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
@@ -167,9 +165,7 @@ let jshint2_read = 1
 let jshint2_save = 1
 
 "lightline
-let g:lightline = {
-      \ 'colorscheme': 'seoul256',
-      \ }
+let g:lightline = { 'colorscheme': 'seoul256' }
 
 "limelight
 nmap <Leader>l <Plug>(Limelight)
