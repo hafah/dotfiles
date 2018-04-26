@@ -156,6 +156,8 @@ nnoremap <silent> <leader>e :FLines<cr>
 let g:goyo_width = '120'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+autocmd! User GoyoEnter silent !tmux set status off
+autocmd! User GoyoLeave silent !tmux set status on
 
 "hardmode
 nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
