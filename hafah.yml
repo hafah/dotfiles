@@ -12,7 +12,4 @@ windows:
             - hafah dotfiles && clear
           - vagrant:
             - hafah <%= @args[0] %> && clear && vagrant up
-          - notes:
-            - hafah notes && clear
-          - control:
-            - hafah control && clear
+  - notes: hafah notes && clear
