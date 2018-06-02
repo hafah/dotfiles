@@ -16,8 +16,8 @@ github() {
 }
 
 refresh() {
-  source ~/.bashrc
-  tmux source-file ~/.tmux.conf
+   source ~/.bashrc
+   tmux source-file ~/.tmux.conf
 }
 
 #chrome in wsl
@@ -40,7 +40,7 @@ export DISPLAY=localhost:0.0
 
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=3 TOMATO_TIME=20 REST_TIME=12 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=2 TOMATO_TIME=20 REST_TIME=12 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
 export EDITOR="vim"
