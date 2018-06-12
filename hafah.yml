@@ -13,3 +13,4 @@ windows:
           - vagrant:
             - hafah <%= @args[0] %> && clear && vagrant up
   - notes: hafah notes && clear
+  - test: hafah <%= @args[0] %> && clear
