@@ -40,7 +40,7 @@ export DISPLAY=localhost:0.0
 
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=3 TOMATO_TIME=4 REST_TIME=11 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=3 TOMATO_TIME=5 REST_TIME=10 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
 export EDITOR="vim"
