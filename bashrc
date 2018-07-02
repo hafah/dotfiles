@@ -27,6 +27,7 @@ alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.ex
 alias commit="git add -A; git commit -v && git push"
 
 # movement
+alias cl="clear"
 alias up="cd .."
 alias down="cd -"
 alias hafah="cd ~/repos/hafah/ && cd"
