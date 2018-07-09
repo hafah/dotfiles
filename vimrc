@@ -16,6 +16,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
 Plug 'junegunn/limelight.vim'
 Plug 'ap/vim-css-color'
+Plug 'kamwitsta/flatwhite-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
@@ -79,7 +80,7 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
-colorscheme gotham256
+colorscheme flatwhite
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.tpl set filetype=html
 
