@@ -7,7 +7,6 @@ endif
 
 "vimplug packages
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'wikitopian/hardmode'
 Plug 'w0rp/ale'
@@ -153,8 +152,7 @@ command! -bang FLines call fzf#vim#grep(
      \ {'options': '--reverse --prompt "FLines> "'})
 
 nnoremap <silent> <leader>e :FLines<cr>
-nnoremap <silent> <leader>v :GFiles<cr>
-
+nnoremap <silent> <C-p> :GFiles<cr>
 "goyo
 let g:goyo_width = '120'
 autocmd! User GoyoEnter Limelight
