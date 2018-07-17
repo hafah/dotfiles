@@ -153,6 +153,7 @@ command! -bang FLines call fzf#vim#grep(
      \ {'options': '--reverse --prompt "FLines> "'})
 
 nnoremap <silent> <leader>e :FLines<cr>
+nnoremap <silent> <leader>v :GFiles<cr>
 
 "goyo
 let g:goyo_width = '120'
