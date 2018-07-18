@@ -188,7 +188,7 @@ au FileType php vmap <leader>d yOvar_dump(jkpa);jkoexit();jk
 "vdebug
 let g:vdebug_options = {}
 let g:vdebug_options["port"] = 9999
-let g:vdebug_options["server"] = "192.168.56.1"
+let g:vdebug_options["server"] = "172.23.39.193"
 let g:vdebug_options["break_on_open"] = 0
 let g:vdebug_options["ide_key"] = "PHPSTORM"
 let g:vdebug_options['debug_file_level'] = 3
