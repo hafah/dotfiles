@@ -30,6 +30,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'lumiliet/vim-twig' 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
@@ -68,6 +69,7 @@ set laststatus=2
 let mapleader = ","
 nmap <leader>w :w!<CR>
 nmap <leader>rp :!python %<CR>
+nmap <leader>re :!perl %<CR>
 nmap <leader>rl :!php %<CR>
 nmap <leader>rb :!bash %<CR>
 nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
