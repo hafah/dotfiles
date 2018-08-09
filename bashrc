@@ -1,6 +1,16 @@
 text_ok="[  OK  ]"
 text_fail="[ FAIL ]"
 
+git_ssh() {
+    echo -ne "Setting up ssh keys: \t\t\t\t"
+    if [ -d ~/.ssh ] || [ -d /root/.ssh ]; then
+        echo -e $text_ok
+    else
+        echo -en $text_fail
+        echo "You have never created public ssh keys. We'll help you!"
+        ssh-keygen -t rsa
+    fi
+}
 
 tmux_session() {
     echo -ne "Setting up tmux enviroment:\t\t\t"
@@ -98,6 +108,7 @@ alias tmux="sudo tmux"
 run() {
     tmux_session
     root_permission
+    git_ssh
 }
 
 run
