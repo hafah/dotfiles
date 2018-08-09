@@ -1,10 +1,37 @@
+text_ok="[  OK  ]"
+text_fail="[ FAIL ]"
+
+
+tmux_session() {
+    echo -ne "Setting up tmux enviroment:\t\t\t"
+    if [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; then
+        echo -e $text_ok
+    else
+        echo -e $text_fail
+        echo "We really dislike for you to work without being in a tmux session"
+        echo "please, run the command: sudo tmux" 
+    fi
+}
+
+root_permission() {
+    echo -ne "Collecting if there is permission for root:\t"
+    if [[ "$EUID" = 0 ]]; then
+        echo -e $text_ok
+    else
+        echo -e $text_fail
+        echo "We can't do much without having sudo permission"
+        echo "please, run the command: sudo bash (or even better detach from tmux and run: sudo tmux)" 
+    fi
+}
+
+
 # functions
-function git-folder {
-	[ -d .git ] && git name-rev --name-only @
+git-folder() {
+    [ -d .git ] && git name-rev --name-only @
 }
 
 cdls() { 
-  cd "$@" && ls;
+    cd "$@" && ls;
 }
 
 bitbucket() {
@@ -16,8 +43,8 @@ github() {
 }
 
 refresh() {
-   source ~/.bashrc
-   tmux source-file ~/.tmux.conf
+    source ~/.bashrc
+    tmux source-file ~/.tmux.conf
 }
 
 #chrome in wsl
@@ -50,6 +77,7 @@ alias mux="tmuxinator"
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 export VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
+
 # docker
 export DOCKER_HOST=tcp://0.0.0.0:2375
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
@@ -65,3 +93,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ll
 alias ll="ls -l"
+alias tmux="sudo tmux"
+
+run() {
+    tmux_session
+    root_permission
+}
+
+run
