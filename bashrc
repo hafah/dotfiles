@@ -1,5 +1,24 @@
-text_ok="[  OK  ]"
+text_ok="[ DONE ]"
 text_fail="[ FAIL ]"
+text_skip="[ SKIP ]"
+
+link_folder() {
+    repos_folder="~/repos"
+    windows_folder="/mnt/c/Users/Carbon/repos"
+    echo -ne "Setting up symlink to WINDOWS:\t\t\t"
+
+    if [ -d $repos_folder ]; then
+        echo "You have a file or folder that isn't a symlink so delete ~/repos in Ubuntu"
+        echo -e $text_fail
+    else
+        echo -e $text_ok
+        if ! [ -d "/mnt/c/Users/Carbon/repos" ]; then
+            mkdir /mnt/c/Users/Carbon/repos 
+        fi
+        ln -s /mnt/c/Users/Carbon/repos /home/hafah > /dev/null 2>&1
+        cd /home/hafah
+    fi
+}
 
 git_ssh() {
     echo -ne "Setting up ssh keys: \t\t\t\t"
@@ -109,6 +128,7 @@ run() {
     tmux_session
     root_permission
     git_ssh
+    link_folder
 }
 
 run
