@@ -70,7 +70,7 @@ let mapleader = ","
 nmap <leader>w :w!<CR>
 nmap <leader>rp :!python %<CR>
 nmap <leader>re :!perl %<CR>
-nmap <leader>rl :!php %<CR>
+nmap <leader>rl :!!<CR>
 nmap <leader>rb :!bash %<CR>
 nmap <leader>rc :!rm -f a.out && clear && g++ %<CR>
 nmap <leader>rf :!./a.out<CR>
