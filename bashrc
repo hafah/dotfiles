@@ -2,6 +2,12 @@ text_ok="[ DONE ]"
 text_fail="[ FAIL ]"
 text_skip="[ SKIP ]"
 
+bind_mnt() {
+    echo -ne "Setting up bind /mnt to /c: \t\t\t"
+    echo -e $text_ok
+    mkdir -p /c
+    sudo mount --bind /mnt/c /c
+}
 link_folder() {
     repos_folder="~/repos"
     windows_folder="/mnt/c/Users/Carbon/repos"
@@ -86,11 +92,10 @@ alias commit="git add -A; git commit -v && git push"
 alias cl="clear"
 alias up="cd .."
 alias down="cd -"
-alias hafah="cd ~/repos/hafah/ && cd"
+alias hafah="cd /c/Users/Carbon/repos/hafah/ && cd"
 
 # config
 alias refresh="refresh"
-alias dockerup="docker-compose -f docker-compose-dev.yml -f docker-compose.yml up"
 
 #copy_paste
 export DISPLAY=localhost:0.0
@@ -129,6 +134,7 @@ run() {
     root_permission
     git_ssh
     link_folder
+    bind_mnt
 }
 
 run
