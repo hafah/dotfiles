@@ -10,10 +10,7 @@ main() {
 }
 
 go_to_folder() {
-    cd ~/repos
-    cd ..
-    cd * #home folder in windows
-    cd Videos
+    cd /mnt/c/Users/Carbon/Videos
 }
 
 convert_all() {
