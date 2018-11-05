@@ -2,12 +2,39 @@ text_ok="[ DONE ]"
 text_fail="[ FAIL ]"
 text_skip="[ SKIP ]"
 
+bitbucket_repos=( chess notes )
+github_repos=( windows10 dotfiles)
+
 bind_mnt() {
     echo -ne "Setting up bind /mnt to /c: \t\t\t"
     echo -e $text_ok
     mkdir -p /c
     sudo mount --bind /mnt/c /c
 }
+
+check_repositories() {
+    #bitbucket
+    for repo in "${bitbucket_repos[@]}"
+    do
+        if ! [ -d ~/repos/hafah/$repo ]; then
+            mkdir -p ~/repos/hafah/$repo
+            cd ~/repos/hafah/$repo
+            git clone https://bitbucket.org/hafah/$repo
+        fi
+    done
+    for repo in "${github_repos[@]}"
+    do
+        if ! [ -d ~/repos/hafah/$repo ]; then
+            mkdir -p ~/repos/hafah/$repo
+            cd ~/repos/hafah/$repo
+            git clone https://github.com/hafah/$repo
+        fi
+    done
+    echo -ne "Setting up repositories: \t\t\t"
+    echo -e $text_ok
+    sudo mount --bind /mnt/c /c
+}
+
 link_folder() {
     repos_folder="~/repos"
     windows_folder="/mnt/c/Users/Carbon/repos"
@@ -138,6 +165,7 @@ run() {
     git_ssh
     link_folder
     bind_mnt
+    check_repositories
 }
 
 run
