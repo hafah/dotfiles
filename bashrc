@@ -14,20 +14,17 @@ bind_mnt() {
 
 check_repositories() {
     #bitbucket
+    cd ~/repos/hafah
     for repo in "${bitbucket_repos[@]}"
     do
         if ! [ -d ~/repos/hafah/$repo ]; then
-            mkdir -p ~/repos/hafah/$repo
-            cd ~/repos/hafah/$repo
-            git clone https://bitbucket.org/hafah/$repo
+            git clone git@bitbucket.org:hafah/$repo.git
         fi
     done
     for repo in "${github_repos[@]}"
     do
         if ! [ -d ~/repos/hafah/$repo ]; then
-            mkdir -p ~/repos/hafah/$repo
-            cd ~/repos/hafah/$repo
-            git clone https://github.com/hafah/$repo
+            git clone git@github.com:hafah/$repo.git
         fi
     done
     echo -ne "Setting up repositories: \t\t\t"
