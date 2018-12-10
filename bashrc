@@ -121,16 +121,16 @@ alias hafah="cd /c/Users/Carbon/repos/hafah/ && cd"
 # config
 alias refresh="refresh"
 
-#copy_paste
-export DISPLAY=localhost:0.0
-
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=4 TOMATO_TIME=5 REST_TIME=9 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=4 TOMATO_TIME=10 REST_TIME=9 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
 export EDITOR="vim"
 alias mux="tmuxinator"
+
+#copy paste
+PATH="/c/Windows/system32:$PATH"
 
 #vagrant
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
