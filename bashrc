@@ -123,7 +123,7 @@ alias refresh="refresh"
 
 #tmuxodoro
 killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=4 TOMATO_TIME=10 REST_TIME=9 nohup tmuxodoro >/dev/null 2>&1 & 
+env TOMATOES=6 TOMATO_TIME=12 REST_TIME=8 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
 export EDITOR="vim"
