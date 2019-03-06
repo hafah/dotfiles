@@ -35,6 +35,7 @@ call plug#end()
 "general
 filetype plugin indent on
 syntax off
+colorscheme torte
 set nocompatible
 set t_ti= t_te=p
 set timeoutlen=1000 ttimeoutlen=0
@@ -173,10 +174,6 @@ let g:limelight_conceal_guifg = '#777777'
 
 "sidesearch
 nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
-
-"snippets
-au FileType php imap func<tab> jkipublic function () {}jkhi<CR>jkei<CR><CR>jkkkk$hhi
-au FileType php vmap <leader>d yOvar_dump(jkpa);jkoexit();jk
 
 "vdebug
 let g:vdebug_options = {}
