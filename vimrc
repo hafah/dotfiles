@@ -17,8 +17,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'joonty/vdebug', { 'tag': 'v1.5.2' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ddrscott/vim-side-search'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -34,8 +34,6 @@ call plug#end()
 
 "general
 filetype plugin indent on
-syntax off
-colorscheme torte
 set nocompatible
 set t_ti= t_te=p
 set timeoutlen=1000 ttimeoutlen=0
@@ -74,6 +72,8 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
+syntax off
+colorscheme torte
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
 au BufRead,BufNewFile *.jsx,*.tpl set filetype=jsx
@@ -186,3 +186,4 @@ let g:vdebug_options["debug_file"] = "~/repos/hafah/vdebug/vdebug.log"
 let g:vdebug_options['path_maps'] = {
       \  '/var/web' : '/mnt/c/Users/Brahim/repos/hafah/web',
       \}
+
