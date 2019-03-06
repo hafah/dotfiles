@@ -8,16 +8,8 @@ endif
 "vimplug packages
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
-Plug 'wikitopian/hardmode'
 Plug 'w0rp/ale'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
-Plug 'junegunn/vim-journal'
-Plug 'NerdyPepper/chestnut.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'aradunovic/perun.vim'
 Plug 'ap/vim-css-color'
-Plug 'kamwitsta/flatwhite-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
@@ -33,19 +25,16 @@ Plug 'tpope/vim-repeat'
 Plug 'lumiliet/vim-twig' 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mxw/vim-jsx'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
 "general
 filetype plugin indent on
-syntax on
+syntax off
 set nocompatible
 set t_ti= t_te=p
 set timeoutlen=1000 ttimeoutlen=0
