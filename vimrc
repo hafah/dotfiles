@@ -73,9 +73,9 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
-colorscheme perun
 au BufRead,BufNewFile *.volt set filetype=htmljinja
 au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
+au BufRead,BufNewFile *.jsx,*.tpl set filetype=jsx
 
 "fonts
 set encoding=utf8
