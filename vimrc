@@ -68,6 +68,7 @@ nmap <leader>pc :PlugClean<CR>
 "colours
 set t_Co=256
 set background=dark
+colorscheme torte
 syntax off
 
 "filetype
@@ -152,9 +153,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 autocmd! User GoyoEnter silent !tmux set status off
 autocmd! User GoyoLeave silent !tmux set status on
-
-"hardmode
-nmap <leader>hm <Esc>:call ToggleHardMode()<CR>
 
 "jshint
 let jshint2_read = 1
