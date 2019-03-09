@@ -24,7 +24,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/csapprox'
-Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -67,17 +66,16 @@ nmap <leader>pu :PlugUpdate<CR>
 nmap <leader>pc :PlugClean<CR>
 
 "colours
-"set t_Co=256
-"set background=dark
+set t_Co=256
+set background=dark
 syntax off
-colorscheme torte
-"au BufRead,BufNewFile *.volt set filetype=twig
-"au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
-"au BufRead,BufNewFile *.jsx,*.tpl set filetype=jsx
+
+"filetype
+au BufRead,BufNewFile *.volt set filetype=twig
+au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
 
 "fonts
 set encoding=utf8
-set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
 nmap ,g :!git difftool -y<CR>
