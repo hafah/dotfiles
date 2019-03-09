@@ -7,27 +7,24 @@ endif
 
 "vimplug packages
 call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
-Plug 'w0rp/ale'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'volt', 'php'], 'do': 'ConnectEmmet' }
+Plug 'w0rp/ale', { 'for': ['php', 'js', 'jsx', 'volt'] }
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
-Plug 'mitsuhiko/vim-jinja'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'joonty/vdebug', { 'tag': 'v1.5.2' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'on': ['GFiles', 'FLines'], 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim', { 'on': ['GFiles', 'FLines'] }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ddrscott/vim-side-search'
+Plug 'ddrscott/vim-side-search', { 'on': 'SideSearch' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'lumiliet/vim-twig' 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/csapprox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'mxw/vim-jsx'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -70,20 +67,19 @@ nmap <leader>pu :PlugUpdate<CR>
 nmap <leader>pc :PlugClean<CR>
 
 "colours
-set t_Co=256
-set background=dark
+"set t_Co=256
+"set background=dark
 syntax off
 colorscheme torte
-au BufRead,BufNewFile *.volt set filetype=htmljinja
-au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
-au BufRead,BufNewFile *.jsx,*.tpl set filetype=jsx
+"au BufRead,BufNewFile *.volt set filetype=twig
+"au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
+"au BufRead,BufNewFile *.jsx,*.tpl set filetype=jsx
 
 "fonts
 set encoding=utf8
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 "keybindings
-nmap ,q :q<CR>
 nmap ,g :!git difftool -y<CR>
 command Wq wq
 command W w
@@ -137,7 +133,11 @@ endif
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 
 "emmet
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+function! ConnectEmmet()
+    let g:user_emmet_install_global = 0
+    autocmd FileType html,css EmmetInstall
+    imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+endfunction
 
 "fzf
 command! -bang FLines call fzf#vim#grep(
@@ -147,6 +147,7 @@ command! -bang FLines call fzf#vim#grep(
 
 nnoremap <silent> <leader>e :FLines<cr>
 nnoremap <silent> <C-p> :GFiles<cr>
+
 "goyo
 let g:goyo_width = '120'
 autocmd! User GoyoEnter Limelight
