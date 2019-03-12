@@ -14,6 +14,10 @@ go_to_folder() {
 }
 
 convert_all() {
+    for i in *.mkv
+    do 
+        ffmpeg -i "$i" -codec copy "${i%.*}.mp4"
+    done
     for i in *.flv 
     do 
         ffmpeg -i "$i" -codec copy "${i%.*}.mp4"

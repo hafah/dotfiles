@@ -8,7 +8,7 @@ endif
 "vimplug packages
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim', { 'for': ['html', 'volt', 'php'], 'do': 'ConnectEmmet' }
-Plug 'w0rp/ale', { 'for': ['php', 'js', 'jsx', 'volt'] }
+Plug 'w0rp/ale', { 'for': ['php', 'js', 'javascript.jsx', 'volt'] }
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shutnik/jshint2.vim'
@@ -23,6 +23,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/csapprox'
 Plug 'wakatime/vim-wakatime'
 Plug 'itchyny/lightline.vim'
@@ -71,6 +73,11 @@ set background=dark
 colorscheme torte
 syntax off
 
+function! HighlightCursor()
+    set cursorline!
+    highlight CursorLine ctermfg=0 ctermbg=2
+endfunction
+
 "filetype
 au BufRead,BufNewFile *.volt set filetype=twig
 au BufRead,BufNewFile *.phtml,*.tpl set filetype=html
@@ -117,7 +124,9 @@ nmap <leader>p +p
 
 "ale
 let g:ale_enabled = 1
-let g:ale_linters = {'php': ['php -l', 'phpcs']}
+let g:ale_linters = {'php': ['php -l', 'phpcs'], 'javascript.jsx': ['eslint'], 'javascript': ['eslint']}
+let g:ale_fixers = {'javascript.jsx': ['eslint']}
+let g:ale_javascript_eslint_use_global = 1
 
 "ctrlp
 if exists("g:ctrl_user_command")
@@ -136,6 +145,12 @@ function! ConnectEmmet()
     let g:user_emmet_install_global = 0
     autocmd FileType html,css EmmetInstall
     imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+    let g:user_emmet_leader_key='<Tab>'
+    let g:user_emmet_settings = {
+      \  'javascript.jsx' : {
+        \      'extends' : 'jsx',
+        \  },
+      \}
 endfunction
 
 "fzf
