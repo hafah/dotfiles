@@ -14,8 +14,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'joonty/vdebug', { 'tag': 'v1.5.2' }
-Plug 'junegunn/fzf', { 'on': ['GFiles', 'FLines'], 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim', { 'on': ['GFiles', 'FLines'] }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim',
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ddrscott/vim-side-search', { 'on': 'SideSearch' }
 Plug 'tpope/vim-fugitive'
