@@ -114,12 +114,9 @@ alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.ex
 #git
 alias commit="git add -A; git commit -v && git push"
 
-# movement
-alias cl="clear"
-alias up="cd .."
-alias down="cd -"
 if [[ "$OSTYPE" != "darwin"* ]]; then
     alias hafah="cd /c/Users/Carbon/repos/hafah/ && cd"
+    alias tmux="sudo tmux"
 else
     alias hafah="cd ~/repos && cd"
 fi
@@ -160,7 +157,6 @@ export GOPATH=$HOME/go
 
 # ll
 alias ll="ls -l"
-alias tmux="sudo tmux"
 
 run() {
     tmux_session
