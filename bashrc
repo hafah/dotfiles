@@ -2,39 +2,40 @@ text_ok="[ DONE ]"
 text_fail="[ FAIL ]"
 text_skip="[ SKIP ]"
 
-bitbucket_repos=( chess notes )
-github_repos=( windows10 dotfiles)
+github_repos=( chess notes windows10 dotfiles)
 
 bind_mnt() {
     echo -ne "Setting up bind /mnt to /c: \t\t\t"
-    echo -e $text_ok
-    mkdir -p /c
-    sudo mount --bind /mnt/c /c
+    if [[ "$OSTYPE" != "darwin"* ]]; then
+        echo -e $text_ok
+        mkdir -p /c
+        sudo mount --bind /mnt/c /c
+    else
+        echo -e $text_skip
+    fi
 }
 
 check_repositories() {
-    #bitbucket
-    cd ~/repos/hafah
-    for repo in "${bitbucket_repos[@]}"
-    do
-        if ! [ -d ~/repos/hafah/$repo ]; then
-            git clone git@bitbucket.org:hafah/$repo.git
-        fi
-    done
+    if [[ "$OSTYPE" != "darwin"* ]]; then
+        cd ~/repos/hafah
+    else 
+        cd ~/repos
+    fi
+
     for repo in "${github_repos[@]}"
     do
-        if ! [ -d ~/repos/hafah/$repo ]; then
+        if ! [ -d ~/repos/$repo ]; then
             git clone git@github.com:hafah/$repo.git
         fi
     done
+
     echo -ne "Setting up repositories: \t\t\t"
     echo -e $text_ok
-    sudo mount --bind /mnt/c /c
 }
 
 link_folder() {
-    repos_folder="~/repos"
     if [[ "$OSTYPE" != "darwin"* ]]; then
+        repos_folder="~/repos"
         windows_folder="/mnt/c/Users/Carbon/repos"
         echo -ne "Setting up symlink to WINDOWS:\t\t\t"
 
@@ -70,18 +71,22 @@ tmux_session() {
     else
         echo -e $text_fail
         echo "We really dislike for you to work without being in a tmux session"
-        echo "please, run the command: sudo tmux" 
+        echo "please, run the command: tmux" 
+        exit
     fi
 }
 
 root_permission() {
-    echo -ne "Collecting if there is permission for root:\t"
-    if [[ "$EUID" = 0 ]]; then
-        echo -e $text_ok
-    else
-        echo -e $text_fail
-        echo "We can't do much without having sudo permission"
-        echo "please, run the command: sudo bash (or even better detach from tmux and run: sudo tmux)" 
+    if [[ "$OSTYPE" != "darwin"* ]]; then
+        echo -ne "Collecting if there is permission for root:\t"
+        if [[ "$EUID" = 0 ]]; then
+            echo -e $text_ok
+        else
+            echo -e $text_fail
+            echo "We can't do much without having sudo permission"
+            echo "please, run the command: sudo bash (or even better detach from tmux and run: sudo tmux)" 
+            exit
+        fi
     fi
 }
 
@@ -108,9 +113,6 @@ refresh() {
     tmux source-file ~/.tmux.conf
 }
 
-#chrome in wsl
-alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
-
 #git
 alias commit="git add -A; git commit -v && git push"
 
@@ -123,10 +125,6 @@ fi
 
 # config
 alias refresh="refresh"
-
-#tmuxodoro
-killall tmuxodoro >/dev/null 2>&1
-env TOMATOES=6 TOMATO_TIME=12 REST_TIME=8 nohup tmuxodoro >/dev/null 2>&1 & 
 
 #tmuxinator
 export EDITOR="vim"
