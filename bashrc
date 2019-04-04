@@ -72,7 +72,7 @@ tmux_session() {
         echo -e $text_fail
         echo "We really dislike for you to work without being in a tmux session"
         echo "please, run the command: tmux" 
-        exit
+        [[ $TERM != "screen" ]] && exec tmux
     fi
 }
 
@@ -85,7 +85,6 @@ root_permission() {
             echo -e $text_fail
             echo "We can't do much without having sudo permission"
             echo "please, run the command: sudo bash (or even better detach from tmux and run: sudo tmux)" 
-            exit
         fi
     fi
 }
@@ -93,7 +92,7 @@ root_permission() {
 
 # functions
 git-folder() {
-    [ -d .git ] && git name-rev --name-only @
+[ -d .git ] && git name-rev --name-only @
 }
 
 cdls() { 
