@@ -15,6 +15,17 @@ bind_mnt() {
     fi
 }
 
+install_bash_completion() {
+    echo -ne "Setting up bash completion: \t\t\t"
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        echo -e $text_ok
+        . $(brew --prefix)/etc/bash_completion
+    else
+        echo -e $text_fail
+        echo "run: brew install bash-completion";
+    fi
+}
+
 check_repositories() {
     if [[ "$OSTYPE" != "darwin"* ]]; then
         cd ~/repos/hafah
@@ -91,10 +102,6 @@ root_permission() {
 
 
 # functions
-git-folder() {
-[ -d .git ] && git name-rev --name-only @
-}
-
 cdls() { 
     cd "$@" && ls;
 }
@@ -142,7 +149,7 @@ PATH="$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
 # terminal
-PS1='\[\e[1;37m\]{ \[\e[1;37m\]\w \[\e[1;37m\]} \[\e[1;32m\]$(git-folder) \[\e[1;33m\]» '
+PS1='\[\e[1;37m\]{ \[\e[1;37m\]\w \[\e[1;37m\]} \[\e[1;32m\]$(__git_ps1) \[\e[1;33m\]» '
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -156,6 +163,7 @@ export GOPATH=$HOME/go
 alias ll="ls -l"
 
 run() {
+    install_bash_completion
     tmux_session
     root_permission
     git_ssh
