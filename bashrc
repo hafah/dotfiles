@@ -149,7 +149,9 @@ PATH="$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
 # terminal
-PS1='\[\e[1;37m\]{ \[\e[1;37m\]\w \[\e[1;37m\]} \[\e[1;32m\]$(__git_ps1) \[\e[1;33m\]» '
+curl -sL https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
+source ~/.bash_git
+PS1='\[\e[1;37m\]{ \[\e[1;37m\]\w \[\e[1;37m\]} \[\e[1;32m\]$(__git_ps1 "[%s]") \[\e[1;33m\]» '
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
