@@ -144,7 +144,6 @@ export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 export VAGRANT_PREFER_SYSTEM_BIN=1 vagrant ssh
 
 # docker
-export DOCKER_HOST=tcp://0.0.0.0:2375
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:$PATH"
 PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
