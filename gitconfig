@@ -1,9 +1,3 @@
-[alias]
-    st = status
-    ci = commit --verbose
-    di = diff
-    aa = add --all
-
 [core]
     editor = vim
 
