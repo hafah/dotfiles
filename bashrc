@@ -106,10 +106,6 @@ cdls() {
     cd "$@" && ls;
 }
 
-bitbucket() {
-    https://bitbucket.org/hafah/$1
-}
-
 github() {
     https://github.com/hafah/$1
 }
