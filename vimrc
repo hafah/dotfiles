@@ -10,6 +10,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim', { 'for': ['html', 'volt', 'php'], 'do': 'ConnectEmmet' }
 Plug 'w0rp/ale', { 'for': ['php', 'js', 'javascript.jsx', 'volt'] }
 Plug 'ap/vim-css-color'
+Plug 'mhinz/vim-janah'
+Plug 'junegunn/seoul256.vim'
+Plug 'posva/vim-vue'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -69,9 +72,11 @@ nmap <leader>pc :PlugClean<CR>
 
 "colours
 set t_Co=256
+syntax on
+colo seoul256
 set background=dark
-colorscheme torte
-syntax off
+"autocmd ColorScheme janah highlight Normal ctermbg=235
+
 
 function! HighlightCursor()
     set cursorline!
