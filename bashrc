@@ -132,6 +132,9 @@ alias refresh="refresh"
 export EDITOR="vim"
 alias mux="tmuxinator"
 
+#font
+export LC_ALL=en_US.UTF-8
+
 #copy paste
 PATH="/c/Windows/system32:$PATH"
 
