@@ -122,10 +122,10 @@ inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 "easy copy pasta
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 nmap <leader>= ggVG=
 nmap <leader>a ggVG
-nmap <leader>p +p
+"nmap <leader>p +p
 
 "ale
 let g:ale_enabled = 1
