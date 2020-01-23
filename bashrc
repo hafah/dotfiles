@@ -128,6 +128,9 @@ fi
 # config
 alias refresh="refresh"
 
+# media
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+
 #tmuxinator
 export EDITOR="vim"
 alias mux="tmuxinator"
