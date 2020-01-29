@@ -13,6 +13,7 @@ Plug 'ap/vim-css-color'
 Plug 'mhinz/vim-janah'
 Plug 'junegunn/seoul256.vim'
 Plug 'posva/vim-vue'
+Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shutnik/jshint2.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -158,12 +159,7 @@ function! ConnectEmmet()
       \}
 endfunction
 
-"fzf
-command! -bang FLines call fzf#vim#grep(
-     \ 'grep -vnITr --color=always --exclude-dir="cphalcon" --exclude-dir=".git" --exclude-dir="vendor" --exclude-dir="node_modules" "^$"', 
-     \ 0,  
-     \ {'options': '--reverse --prompt "FLines> "'})
-
+command! -bang -nargs=* FLines call fzf#vim#grep('rg --color=always --column --no-ignore --line-number --no-heading '.shellescape(<q-args>), 1, <bang>0)
 nnoremap <silent> <leader>e :FLines<cr>
 nnoremap <silent> <C-p> :GFiles<cr>
 
