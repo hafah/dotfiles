@@ -60,7 +60,7 @@ set laststatus=2
 "leader
 let mapleader = ","
 nmap <leader>w :w!<CR>
-nmap <leader>rp :!python %<CR>
+nmap <leader>rp :!python3 %<CR>
 nmap <leader>re :!perl %<CR>
 nmap <leader>rl :w && !!<CR>
 nmap <leader>rb :!bash %<CR>
