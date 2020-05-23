@@ -4,6 +4,19 @@ text_skip="[ SKIP ]"
 
 github_repos=( chess notes windows10 dotfiles)
 
+android_path() {
+    echo -ne "Setting up android path in OSX: \t\t\t"
+    if [[ "$OSTYPE" != "darwin"* ]]; then
+        echo -e $text_ok
+        export ANDROID_HOME=$HOME/Library/Android/sdk
+        export PATH=$PATH:$ANDROID_HOME/emulator
+        export PATH=$PATH:$ANDROID_HOME/tools
+        export PATH=$PATH:$ANDROID_HOME/tools/bin
+        export PATH=$PATH:$ANDROID_HOME/platform-tools
+    else
+        echo -e $text_skip
+    fi
+}
 bind_mnt() {
     echo -ne "Setting up bind /mnt to /c: \t\t\t"
     if [[ "$OSTYPE" != "darwin"* ]]; then
@@ -135,6 +148,10 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 export EDITOR="vim"
 alias mux="tmuxinator"
 
+#postsql
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+
 #font
 export LC_ALL=en_US.UTF-8
 
@@ -173,6 +190,7 @@ run() {
     link_folder
     bind_mnt
     check_repositories
+    android_path
 }
 
 run
