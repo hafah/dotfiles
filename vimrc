@@ -160,7 +160,7 @@ function! ConnectEmmet()
       \}
 endfunction
 
-command! -bang -nargs=* FLines call fzf#vim#grep('rg --color=always --column --no-ignore --line-number --no-heading '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* FLines call fzf#vim#grep('rg --color=always --column --line-number --no-heading '.shellescape(<q-args>), 1, <bang>0)
 nnoremap <silent> <leader>e :FLines<cr>
 nnoremap <silent> <C-p> :GFiles<cr>
 
